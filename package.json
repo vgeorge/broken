@@ -1,8 +1,19 @@
 {
+  "name": "broken-in-osm",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
   "dependencies": {
-    "async": "^0.9.0",
-    "commander": "latest",
-    "csv": "0.3.x",
-    "progress": "^1.1.5"
+    "underscore": "latest",
+    "async": "latest",
+    "csv-parse": "latest",
+    "compression": "latest",
+    "body-parser": "latest",
+    "express": "4.x",
+    "mongoose": "latest",
+    "nodemon": "latest",
+    "jade": "latest",
+    "less-middleware": "latest"
   }
 }
