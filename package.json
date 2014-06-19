@@ -14,6 +14,10 @@
     "mongoose": "latest",
     "nodemon": "latest",
     "jade": "latest",
-    "less-middleware": "latest"
+    "less-middleware": "latest",
+    "progress": "latest"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5"
   }
 }

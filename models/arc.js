@@ -11,26 +11,18 @@
  */
 
 var ArcSchema = new Schema({
-
-  ibge_id: {type : String, default : '', trim : true},
-  name: {type : String, default : '', trim : true, required: true},
-  uf: {type: String},  
-  isCapital: {type: Boolean, defaut: false},
-  nearCities: [{
-    id: { type: Schema.ObjectId, ref: 'City'},
-    straightDistance: {type: Number, default: 0},
-    routeForwardDistanceRatio: {type: Number, default: 0},
-    routeBackwardDistanceRatio: {type: Number, default: 0}
-  }],
-  stats: {
-    percentualConnected: { type: Number, default: 0},    
-    totalConnected: { type: Number, default: 0},
-    totalTortuous: { type: Number, default: 0},
-    totalInexistent: { type: Number, default: 0},        
-    totalChecked: { type: Number, default: 0}
+  from: { type: Number, ref: 'City', index: true},
+  to: { type: Number, ref: 'City', index: true},
+  distance: {
+    straight: Number,
+    road: Number
   },
-  loc: { type: {type: String}, coordinates: []},
-  updatedAt: {type: Date},
-  shouldUpdate: {type: Boolean, default: true},
-  isUpdating: {type: Boolean, default: false}
+  connected: {type: Boolean, default: false},
+  tortuous: {type: Boolean, default: false},
+  updatedAt: {type: Date, default: Date.now}
 })
+
+ArcSchema.index({ from: 1, to: 1 });
+
+
+mongoose.model('Arc', ArcSchema)
