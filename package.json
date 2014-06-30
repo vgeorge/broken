@@ -5,17 +5,20 @@
     "start": "nodemon app.js"
   },
   "dependencies": {
-    "underscore": "latest",
     "async": "latest",
-    "csv-parse": "latest",
-    "compression": "latest",
     "body-parser": "latest",
+    "compression": "latest",
+    "csv-parse": "latest",
     "express": "4.x",
-    "mongoose": "latest",
-    "nodemon": "latest",
     "jade": "latest",
     "less-middleware": "latest",
-    "progress": "latest"
+    "moment": "^2.7.0",
+    "mongoose": "latest",
+    "nodemon": "latest",
+    "progress": "latest",
+    "request": "^2.36.0",
+    "request-json": "^0.4.10",
+    "underscore": "latest"
   },
   "devDependencies": {
     "grunt": "^0.4.5"

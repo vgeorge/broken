@@ -30,16 +30,26 @@ var CitySchema = new Schema({
 CitySchema.index({ loc: '2dsphere' });
 
 /**
+ * Virtuals
+ */
+
+CitySchema.virtual('lon').get(function () {
+  return this.loc.coordinates[0];
+});
+
+CitySchema.virtual('lat').get(function () {
+  return this.loc.coordinates[1];
+});
+
+CitySchema.virtual('latlon').get(function () {
+  return [this.lat, this.lon];
+});
+
+/**
  * Methods
  */
 
 CitySchema.methods = {
-	getLon: function(){
-		return this.loc.coordinates[0]
-	},
-	getLat: function(){
-		return this.loc.coordinates[1]    
-	},
 	getNearest: function(n, callback) {
 		var City = mongoose.model('City')
 		

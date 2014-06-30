@@ -53,6 +53,10 @@ fs.readdirSync(models_path).forEach(function (file) {
   if (~file.indexOf('.js')) require(models_path + '/' + file)
 })
 
+// Start updating arcs
+var Checker = require('./lib/checker');
+Checker(); 
+
 // Load routes
 var 
 	routes = require('./routes'),

@@ -27,9 +27,6 @@ module.exports = function(grunt) {
 
 		var done = this.async();
 
-		// Connect to mongodb
-		// mongoose.connect(config.db)
-
 		// On connect
 		db.on('open', function (err) {
 			City.count(function(err, count){
@@ -56,9 +53,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('cities', 'Load data/cities.csv', function(){
 
 		var done = this.async();
-		
-		// Connect to mongodb
-		// mongoose.connect(config.db)
 
 		// On connect
 		db.on('open', function (err) {
@@ -92,9 +86,6 @@ module.exports = function(grunt) {
 
 		var done = this.async();
 		
-		// Connect to mongodb
-		// mongoose.connect(config.db)
-
 		// On connect
 		db.on('open', function (err) {
 			City.buildNet(config.nNearestCities, function(err){
